@@ -231,7 +231,7 @@ An MCP server that maintains a locally scraped, rendered copy of docs.github.com
 - **NFR-5.1:** MUST support Linux, macOS, and Windows
 - **NFR-5.2:** MUST support Node.js 18+ or Python 3.9+
 - **NFR-5.3:** MUST work with git 2.25+
-- **NFR-5.4:** MUST be compatible with MCP clients (Claude Desktop, Cline, etc.)
+- **NFR-5.4:** MUST be compatible with MCP clients (Copilot in VS Code, Claude Desktop, Cline, etc.)
 
 ### 5.6 Usability
 - **NFR-6.1:** Installation SHOULD be single-command
@@ -646,7 +646,7 @@ security:
 
 ## 10. Implementation Phases
 
-### Phase 1: MVP (Weeks 1-3)
+### Phase 1: MVP
 - Basic web scraping infrastructure
 - HTML to Markdown conversion
 - Simple keyword search
@@ -662,7 +662,7 @@ security:
 - < 1GB disk usage
 - Respects rate limits and robots.txt
 
-### Phase 2: Enhanced Search (Weeks 4-5)
+### Phase 2: Enhanced Search
 - Advanced indexing with ranking
 - Category filtering
 - Related documents
@@ -675,7 +675,7 @@ security:
 - Accurate relevance ranking
 - Category filtering works correctly
 
-### Phase 3: Auto-Updates & Polish (Weeks 6-7)
+### Phase 3: Auto-Updates & Polish
 - Scheduled scraping updates
 - Change detection via sitemap/headers
 - Incremental index updates
@@ -689,14 +689,6 @@ security:
 - All tests passing (>80% coverage)
 - Handles scraping failures gracefully
 - Respects rate limits and doesn't overload docs.github.com
-
-### Phase 4: Advanced Features (Weeks 8+)
-- Semantic search capabilities
-- Multiple repository support
-- API versioning awareness
-- Enhanced caching strategies
-- Performance benchmarking
-- Production deployment guide
 
 ---
 
@@ -760,44 +752,6 @@ security:
 - **Memory:** 512 MB minimum, 1 GB recommended (for concurrent scraping)
 - **CPU:** 1 core minimum, 2+ cores recommended
 - **Network:** Broadband for initial scraping (will take longer than git clone due to rate limiting)
-
----
-
-## 14. Open Questions
-
-1. **Content Versioning:** Should the server support multiple versions of GitHub docs (e.g., GitHub Enterprise versions)?
-2. **Language Support:** GitHub docs are available in multiple languages. Should we support non-English docs (e.g., /ja, /es, /pt, /zh)?
-3. **Custom Documentation Sites:** Should users be able to point to other documentation sites to scrape?
-4. **Scraping Ethics:** Should we implement additional safeguards beyond rate limiting (e.g., only scrape during off-peak hours)?
-5. **Authentication:** Should we support GitHub token authentication for better rate limits or access to Enterprise docs?
-6. **Telemetry:** Should we collect anonymous usage statistics to improve the service?
-7. **Robots.txt Compliance:** How strictly should we follow robots.txt? Should we allow override for personal/enterprise use?
-
----
-
-## 15. Future Enhancements
-
-### 15.1 Post-Launch Features
-- Multi-language support (scrape /ja, /es, etc.)
-- Multi-site support (also scrape docs.github.com/enterprise-server, developer.github.com)
-- Semantic/vector search using embeddings
-- Smart caching based on query patterns
-- Integration with GitHub GraphQL API for real-time data (API reference)
-- Web UI for testing and debugging
-- Docker containerization with pre-scraped content
-- Kubernetes deployment support
-- Plugin system for custom scrapers
-- Export capabilities (PDF, HTML, EPub)
-- Offline bundle generation and distribution
-- Mirror mode: serve as a local docs.github.com proxy
-
-### 15.2 Advanced Capabilities
-- Natural language query understanding
-- Automatic code example extraction and testing
-- Version-aware search (e.g., "show me actions docs from 2023")
-- Integration with GitHub Copilot for enhanced context
-- Diff-based change notifications
-- Custom taxonomy and categorization
 
 ---
 
@@ -878,16 +832,6 @@ console.log(doc.url);
 | Version | Date | Author | Changes |
 |---------|------|--------|---------|
 | 1.0 | 2025-10-02 | @fuzzwah | Initial draft |
-
----
-
-## 18. Approvals
-
-| Role | Name | Date | Signature |
-|------|------|------|-----------|
-| Product Owner | TBD | | |
-| Technical Lead | TBD | | |
-| Engineering Manager | TBD | | |
 
 ---
 
